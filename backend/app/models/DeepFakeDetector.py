@@ -18,7 +18,7 @@ class DeepFakeDetector:
             "confidence": float(predictions),
             "analysis_details": self._generate_audio_report(predictions, features)
         }
-    async def detect_image_deepfake(self, image_file: str):
+    async def detect_image_deepfake(self, file):
         
         with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
             temp_file_path = temp_file.name
